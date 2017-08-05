@@ -15,30 +15,17 @@
 	header("Refresh: $sec; url=$page");
 	$val_array = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 	//this php script generate the first page in function of the file
-	for ( $i= 0; $i<17; $i++) {
-		//set the pin's mode to output and read them
-		system("gpio mode ".$i." out");
-		exec ("gpio read ".$i, $val_array[$i], $return );
-	}
-	for ( $i= 21; $i<28; $i++) {
+	for ( $i= 0; $i<24; $i++) {
+	if ($i > 16) $i=$i+4;
 		//set the pin's mode to output and read them
 		system("gpio mode ".$i." out");
 		exec ("gpio read ".$i, $val_array[$i], $return );
 	}
 	//for loop to read the value
 	$i =0;
-	for ($i = 0; $i < 17; $i++) {
+	for ($i = 0; $i < 24; $i++) {
 		//if off
-		if ($val_array[$i][0] == 0 ) {
-			echo ("<img id='button_".$i."' src='data/img/red/red_".$i.".jpg' onclick='change_pin (".$i.");'/>");
-		}
-		//if on
-		if ($val_array[$i][0] == 1 ) {
-			echo ("<img id='button_".$i."' src='data/img/green/green_".$i.".jpg' onclick='change_pin (".$i.");'/>");
-		}	 
-	}
-	for ($i = 21; $i < 28; $i++) {
-		//if off
+		if ($i > 16) $i=$i+4;
 		if ($val_array[$i][0] == 0 ) {
 			echo ("<img id='button_".$i."' src='data/img/red/red_".$i.".jpg' onclick='change_pin (".$i.");'/>");
 		}

@@ -52,11 +52,9 @@ var data = 0;
 				Buttons[pic].src = "data/img/green/green_"+pic+".jpg";
 			}
 			else if ( !(data.localeCompare("fail"))) {
-				alert ("Something went wrong!" );
 				return ("fail");			
 			}
 			else {
-				alert ("Something went wrong!" );
 				return ("fail"); 
 			}
 		}

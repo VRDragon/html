@@ -6,7 +6,7 @@ if (isset ( $_GET["pic"] )) {
 	$pic = strip_tags ($_GET["pic"]);
 	
 	//test if value is a number
-	if ( (is_numeric($pic)) && ($pic <= 24) && ($pic >= 0) ) {
+	if ( (is_numeric($pic)) && ($pic <= 23) && ($pic >= 0) ) {
 		
 		//set the gpio's mode to output		
 		system("gpio mode ".$pic." out");

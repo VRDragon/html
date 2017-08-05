@@ -11,7 +11,7 @@
     <!-- On/Off button's picture -->
 	<?php
 	$page = $_SERVER['PHP_SELF'];
-	$sec = "10";
+	$sec = "2";
 	header("Refresh: $sec; url=$page");
 	$val_array = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 	//this php script generate the first page in function of the file

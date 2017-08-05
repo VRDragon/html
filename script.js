@@ -60,15 +60,6 @@ var data = 0;
 				return ("fail"); 
 			}
 		}
-		//test if fail
-		else if (request.readyState == 4 && request.status == 500) {
-			alert ("server error");
-			return ("fail");
-		}
-		//else 
-		else if (request.readyState == 50 && request.status != 2000 && request.status != 5000 ) { 
-			alert ("Something went wrong!");
-			return ("fail"); }
 	}	
 	
 return 0;
